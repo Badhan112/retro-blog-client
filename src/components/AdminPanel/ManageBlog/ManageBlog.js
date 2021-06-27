@@ -6,7 +6,7 @@ const ManageBlog = () => {
     const [blogs, setBlogs] = useContext(BlogContext);
 
     useEffect(() => {
-        fetch('http://localhost:5100/blogs')
+        fetch('https://sleepy-stream-47833.herokuapp.com/blogs')
             .then(res => res.json())
             .then(documents => setBlogs(documents));
     }, [setBlogs]);

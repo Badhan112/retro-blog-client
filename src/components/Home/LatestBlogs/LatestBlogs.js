@@ -9,7 +9,7 @@ const LatestBlogs = () => {
 
     useEffect(() => {
         setIsFetchData(true);
-        fetch('http://localhost:5100/blogs')
+        fetch('https://sleepy-stream-47833.herokuapp.com/blogs')
             .then(res => res.json())
             .then(documents => {
                 setBlogs(documents);

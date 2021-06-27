@@ -7,7 +7,7 @@ const AdminBlogCard = ({ blog }) => {
     const { _id, image, title, content, publishDate } = blog;
 
     const handleDelete = id => {
-        fetch(`http://localhost:5100/delete-blog/${id}`, {
+        fetch(`https://sleepy-stream-47833.herokuapp.com/delete-blog/${id}`, {
             method: "DELETE",
         })
             .then(res => res.json())
@@ -18,7 +18,7 @@ const AdminBlogCard = ({ blog }) => {
                     alert('Unexpected Error');
                 }
 
-                fetch('http://localhost:5100/blogs')
+                fetch('https://sleepy-stream-47833.herokuapp.com/blogs')
                     .then(res => res.json())
                     .then(documents => setBlogs(documents));
             })

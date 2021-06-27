@@ -28,7 +28,7 @@ const NewBlogForm = () => {
         formData.append('content', newBlog.content);
         formData.append('publishDate', new Date());
 
-        fetch('http://localhost:5100/add-blog', {
+        fetch('https://sleepy-stream-47833.herokuapp.com/add-blog', {
             method: "POST",
             body: formData,
         }).then(res => res.json())

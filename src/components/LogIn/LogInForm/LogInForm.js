@@ -28,7 +28,7 @@ const LogInForm = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
 
-                fetch(`http://localhost:5100/check-admin/${user.email}`)
+                fetch(`https://sleepy-stream-47833.herokuapp.com/check-admin/${user.email}`)
                     .then(res => res.json())
                     .then(result => {
                         setIsFetchData(false);
