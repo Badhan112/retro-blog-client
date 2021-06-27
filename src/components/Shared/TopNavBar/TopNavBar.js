@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AdminContext } from '../../../App';
 
 const TopNavBar = () => {
+    const [isAdmin] = useContext(AdminContext);
 
     const handleClick = () => {
         const navItem = document.getElementById('nav-item');
@@ -21,8 +23,11 @@ const TopNavBar = () => {
             <nav className='hidden md:block' id='nav-item'>
                 <ul className='flex flex-col md:flex-row items-end md:justify-end'>
                     <li className='mt-3 mx-3'><Link className='p-3 bg-gray-200 rounded hover:bg-gray-400 hover:text-white hover:shadow transition ease-in-out duration-300 cursor-pointer' to='/home'>Home</Link></li>
-                    <li className='mt-3 mx-3'><Link className='p-3 bg-gray-200 rounded hover:bg-gray-400 hover:text-white hover:shadow transition ease-in-out duration-300 cursor-pointer' to='/login' >Log In</Link></li>
-                    <li className='mt-3 mx-3'><Link className='p-3 bg-gray-200 rounded hover:bg-gray-400 hover:text-white hover:shadow transition ease-in-out duration-300 cursor-pointer' to='/admin-panel' >Admin Panel</Link></li>
+                    {
+                        isAdmin
+                        ? <li className='mt-3 mx-3'><Link className='p-3 bg-gray-200 rounded hover:bg-gray-400 hover:text-white hover:shadow transition ease-in-out duration-300 cursor-pointer' to='/admin-panel' >Admin Panel</Link></li>
+                        : <li className='mt-3 mx-3'><Link className='p-3 bg-gray-200 rounded hover:bg-gray-400 hover:text-white hover:shadow transition ease-in-out duration-300 cursor-pointer' to='/login' >Log In</Link></li>
+                    }
                 </ul>
             </nav>
         </header>

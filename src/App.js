@@ -14,7 +14,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 export const AdminContext = createContext();
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   return (
     <div className="bg-gray-100 text-gray-600">
