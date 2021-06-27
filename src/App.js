@@ -18,12 +18,6 @@ function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch('http://localhost:5100/blogs')
-    .then(res => res.json())
-    .then(documents => setBlogs(documents));
-  }, []);
-
   return (
     <div className="bg-gray-100 text-gray-600">
       <AdminContext.Provider value={[isAdmin, setIsAdmin]}>
